@@ -1,0 +1,42 @@
+@use "../abstract" as *;
+
+@each $screen-size, $font-sizes in $type-scale {
+  @if $screen-size == sm {
+    @each $key, $value in $font-sizes {
+      .fs-#{$key} {
+        font-size: var(--fs-#{$key});
+      }
+    }
+  }
+}
+
+.fw-400 {
+  font-weight: var(--fw-400);
+}
+.fw-500 {
+  font-weight: var(--fw-500);
+}
+.fw-600 {
+  font-weight: var(--fw-600);
+}
+.fw-700 {
+  font-weight: var(--fw-700);
+}
+
+.text-center {
+  text-align: center;
+
+  & p {
+    margin-inline: auto;
+  }
+}
+
+p.text-center {
+  max-width: 60ch;
+  margin-inline: auto;
+}
+
+.inline-center {
+  width: fit-content;
+  margin-inline: auto;
+}

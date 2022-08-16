@@ -1,0 +1,26 @@
+@use "../abstract" as *;
+
+.badges {
+  --gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.badge {
+  display: inline-block;
+  padding: 8px 18px;
+  color: var(--clr-neutral-500);
+  background-color: transparent;
+  border: 1px solid var(--clr-neutral-500);
+  border-radius: 8px;
+  width: max-content;
+  cursor: pointer;
+
+  transition: all 250ms ease-in-out;
+
+  &:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 2px 2px 1px 0 var(--clr-accent-200);
+    color: var(--clr-accent-400);
+    border-color: var(--clr-accent-400);
+  }
+}

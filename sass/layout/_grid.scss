@@ -1,0 +1,14 @@
+@use "../abstract" as *;
+
+.grid {
+  display: grid;
+  gap: var(--gap, 1rem);
+
+  @include mq("md") {
+    @for $i from 2 through 4 {
+      &[data-columns="#{$i}"] {
+        grid-template-columns: repeat($i, 1fr);
+      }
+    }
+  }
+}

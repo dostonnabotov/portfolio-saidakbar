@@ -1,0 +1,29 @@
+@use "../abstract" as *;
+
+section {
+  padding-block: clamp(2rem, 8vw, 4rem);
+}
+
+.social-media {
+  --gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(
+    180deg,
+    rgba(76, 94, 157, 0.8) -32.08%,
+    rgba(23, 24, 54, 0.8) 127.36%
+  );
+  border-radius: 20px;
+  width: fit-content;
+  margin-left: auto;
+  transform: translateY(-2rem);
+  z-index: 5;
+
+  & ul {
+    --gap: 0;
+    margin-left: 1rem;
+
+    & li {
+      margin-left: -1rem;
+    }
+  }
+}

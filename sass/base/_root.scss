@@ -1,0 +1,36 @@
+@use "../abstract" as *;
+
+:root {
+  /* FONTS */
+  /* font families */
+  --ff-primary: "Inter", sans-serif;
+  --ff-body: var(--ff-primary);
+
+  /* font weights */
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-700: 700;
+
+  /* Font Sizes */
+  @each $screen-size, $sizes in $type-scale {
+    @if $screen-size == sm {
+      @each $key, $value in $sizes {
+        --fs-#{$key}: #{$value};
+      }
+    } @else {
+      @include mq("md") {
+        @each $key, $value in $sizes {
+          --fs-#{$key}: #{$value};
+        }
+      }
+    }
+  }
+
+  /* COLORS */
+  @each $color, $shades in $colors {
+    @each $key, $value in $shades {
+      --clr-#{$color}-#{$key}: #{$value};
+    }
+  }
+}
